@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block js %}
+{% endblock %}
+
+
+{% block main %}
+<h1><span class="label label-success">Information Comparison Summary</span></h1>
+
+<!-- <p>For testing only: Length of the vals returned {{scraperlen}} </p> -->
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Scores</h3>
+  </div>
+  <div class="panel-body">
+   <center><h1>The Results</h1> </center>
+   <p> The credibility percentage score found for this information is {{credibility}}%.</p>
+    <hr>
+    <hr>
+<strong><p>This information was found to rank the highest under the category {{inputcategory}}  by : {{cat_score}} /1 </p></strong>
+
+<hr>
+<strong><p>The relevant source/s of information were found at the websites:</strong>{{siteurl}}</p>
+<p>There were {{phrasematches}} matching phrases found with the compared source</p>
+<hr>
+<strong><p>Matching phrases:</p></strong>
+<li>{{matchingphrases}}</li>
+<p>There were {{subjectmatches}} matching subjects found with the compared source</p>
+<hr>
+<strong><p>Matching subjects:</p></strong>
+<li>{{matchingsubjects}}</li>
+<hr>
+<p>There were {{entitymatches}} matching entities found with the compared source</p>
+<hr>
+<strong><p>Matching entities:</p></strong>
+<li>{{matchingentities}}</li>
+<hr>
+<strong><p>Matching category:</p></strong>
+<li>{{matchingcategory}}</li>
+<hr>
+  </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">Input Data Extraction Results</div>
+  <div class="panel-body">
+      <p>Phrases found within information:</p>
+      <li>{{phraselist}}</li>
+      <p>Entities found within the information:</p>
+      <li>{{entitylist}}</li>
+      <p>Relevant Subjects found within the information: </p>
+      <li>{{sublist}}</li>
+      <p>Maincategory found in information:</p>
+      <li>{{maincategory}}</li>
+    
+  </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Source Data Extraction Results </div>
+  <div class="panel-body">
+      <p>Phrases found within the Source information:</p>
+      <li>{{urlphraselist}}</li>
+      <p>Entities found within the Source information:</p>
+      <li>{{urlentitylist}}</li>
+      <p>Relevant Subjects found within the Source information:</p>
+      <li>{{urlsublist}}</li>
+      <p>Maincategory found in Source information:</p>
+      <li>{{urlmaincategory}}</li>
+    
+  </div>
+</div>
+
+        
+         <button>Check New Info</button>
+
+{% endblock %}

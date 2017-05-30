@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<h1 class="page-header">Credibility Check</h1>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-success">
+      <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endwith %}
+
+<form class="" action="{{ url_for('add_file') }}" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="file">Upload your file</label>
+    <input type="file" name="file" class="form-control" />
+    <br>
+    <br>
+    OR
+      Input Raw Text
+    <br>
+ <textarea name="textarea" rows="10" cols="50" placeholder="Enter Raw Text Here" minlength="25"></textarea>
+  </div>
+  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+  
+</form>
+{% endblock %}

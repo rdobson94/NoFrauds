@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+
+<h1 class="page-header hometit animated fadeInDown">HOW CREDIBLE IS <br>YOUR INFORMATION?</h1>
+<p class="liltext animated fadeInUp">Using a set of algorithms, NO FRAUDS can determine <br>how credible your reserch information/any information is.</p>
+<br><br>
+<a href="{{ url_for('add_file') }}" style="font-size:30px;color:red;" class="animated infinite bounce">Check Credibility</a>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-success">
+      <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endwith %}
+
+
+{% endblock %}
